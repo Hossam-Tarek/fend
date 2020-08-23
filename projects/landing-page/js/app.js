@@ -17,14 +17,26 @@
  * Define Global Variables
  * 
 */
-
+const sections = document.querySelectorAll("section");
+const list = document.querySelector("#navbar__list");
+const fragment = document.createDocumentFragment();
 
 /**
  * End Global Variables
  * Start Helper Functions
  * 
 */
+function addToNav(section) {
+    const listItem = document.createElement("li");
 
+    listItem.textContent = section.getAttribute("data-nav");
+    listItem.className = "menu__link";
+    listItem.addEventListener("click", function() {
+        section.scrollIntoView({behavior: "smooth", block: "start"});
+    });
+
+    fragment.appendChild(listItem);
+}
 
 
 /**
@@ -34,7 +46,8 @@
 */
 
 // build the nav
-
+sections.forEach(addToNav);
+list.appendChild(fragment);
 
 // Add class 'active' to section when near top of viewport
 
