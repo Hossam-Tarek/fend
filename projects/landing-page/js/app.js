@@ -26,6 +26,8 @@ const fragment = document.createDocumentFragment();
  * Start Helper Functions
  * 
 */
+
+// Check if an element in in the viewport or not.
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
@@ -33,10 +35,11 @@ function isInViewport(element) {
     );
 }
 
-
+// Add header to navbar for each section in the html file.
 function addToNav(section) {
     const listItem = document.createElement("li");
 
+    // Listener for scrolls to detect what element is active and what's not.
     document.addEventListener("scroll", function() {
         const sectionName = section.getAttribute("data-nav");
         if (isInViewport(section)) {
@@ -65,23 +68,3 @@ function addToNav(section) {
 // build the nav
 sections.forEach(addToNav);
 list.appendChild(fragment);
-
-// Add class 'active' to section when near top of viewport
-
-
-// Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
-
-
