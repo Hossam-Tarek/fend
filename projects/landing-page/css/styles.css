@@ -94,6 +94,10 @@ section {
     z-index: 5;
 }
 
+.highlighted {
+    border: 5px solid yellow;
+}
+
 /* Footer Styles */
 .page__footer {
     background: #000;
